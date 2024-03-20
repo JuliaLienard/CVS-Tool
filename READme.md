@@ -32,13 +32,14 @@ PATH=$PATH:path/To/plink/
 
 The updated version of the variant_summary.txt can be used as this file is updated monthly by ClinVar.
 
-#### Use of the FilterClinVarNotprovided.py script to filter 
+#### Use of the FilterClinVarNotprovided.py script to filter:
 - "Single nucleotide variant" 
 - the more accurate Assembly "GRCh38" 
 - "Pathogenic" for the clinical significance
 - RS# (dbSNP) as not missing (!= "-1") which represent 1,814,016 lines in the variant_summary.txt
 - Disease description indicated only as "not provided" are filtered out
-and output only certain relevant columns for the subsequent analysis (AlleleID, GeneID, ClinicalSignificance, RS# ID, PhenotypeList, Chromosome, RefAllele, AltAllele).
+
+The output contains only certain relevant columns for the subsequent analysis (AlleleID, GeneID, ClinicalSignificance, RS# ID, PhenotypeList, Chromosome, RefAllele, AltAllele).
 
 This will create a lighter version of the ClinVar database that can be checked for the extra information included if needed.
 
