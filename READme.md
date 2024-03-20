@@ -159,6 +159,9 @@ Ne61_genotyping_noUDG	rs5082[chr1]	Pathogenic	Hypercholesterolemia, familial, 1	
 Ne35_genotyping_noUDG	rs5082[chr1]	Pathogenic	Hypercholesterolemia, familial, 1	32975	2allele(s)
 ```
 
+The alleleID has been included because it is used later when comparing disease markers for any user with those found in Ancient people. Indeed, some disease markers can have the same rsID with different alleles (and thus different alleleIDs) and different associated Disease/disorder description. If the ClinVar database if filtered in the future by including also "likely pathogenic" for instance, CVS-Tool will still be able to accurately give shared markers between a user and Ancient people.
+
+
 # DISEASE MARKERS FOR ANY USER
 
 ## Which markers the User's has? and which are shared with Ancient people
