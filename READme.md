@@ -28,7 +28,7 @@ PATH=$PATH:path/To/plink/
 
 ## STEP 1 - Extracting the data subsets for the analysis
 
-### A- Extract relavant lines of ClinVar for the subsequent analysis, from the variant_summary.txt 
+### A- Extract relevant lines of ClinVar for the subsequent analysis, from the variant_summary.txt 
 
 The updated version of the variant_summary.txt can be used as this file is updated monthly by ClinVar.
 
@@ -87,6 +87,7 @@ plink --bfile v54.1_1240K_public --recode --out v54.1_1240K_public
 
 
 #### Extract data from the AADR database for individuals corresponding to "Ancient people" only
+
 In the Ancient_samples.txt, there is a list of Individual IDs, that can be used to filter the v54.1_1240K_public files
 
 ```sh
@@ -149,6 +150,14 @@ python Ancient_ClinVarmarker.py ClinVar_filtered/Ancient_ClinVfiltered_Genotype.
 Ancient_markers.txt is output in the newly generated ClinVar_markers/ directory in /AADR_v54.1/2_Ancient_filtered/
 7548 disease markers identified in Ancient people using the ClinVar database version
 
+The output table looks like the following (first 5 lines):
+```sh
+#Username	rsID[chromosome]	Clinical_Significance	Disease/Disorder	AlleleID	Nb_alleles_involved
+Ne30_genotyping_noUDG	rs5082[chr1]	Pathogenic	Hypercholesterolemia, familial, 1	32975	2allele(s)
+Ne30_genotyping_noUDG	rs3755319[chr2]	Pathogenic	Lucey-Driscoll syndrome	27321	1allele(s)
+Ne61_genotyping_noUDG	rs5082[chr1]	Pathogenic	Hypercholesterolemia, familial, 1	32975	2allele(s)
+Ne35_genotyping_noUDG	rs5082[chr1]	Pathogenic	Hypercholesterolemia, familial, 1	32975	2allele(s)
+```
 
 # DISEASE MARKERS FOR ANY USER
 
