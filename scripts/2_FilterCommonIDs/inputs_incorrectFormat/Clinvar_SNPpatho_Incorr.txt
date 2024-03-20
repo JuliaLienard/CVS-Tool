@@ -1,0 +1,8 @@
+#AlleleID	GeneID	ClinicalSignificance	PhenotypeList	Chromosome	ReferenceAlleleVCF	AlternateAlleleVCF RS#(dbSNP)
+15044	55572	Pathogenic	Mitochondrial complex 1 deficiency, nuclear type 19|not provided|Leigh syndrome|FOXRED1-related condition	11	C	T	267606829
+15045	55572	Pathogenic	Mitochondrial complex 1 deficiency, nuclear type 19	11	A	G	267606830
+15052	3077	Pathogenic	Hemochromatosis type 1	6	G	C	28934597
+15056	3077	Pathogenic	Hemochromatosis type 1	6	A	C	28934595
+15057	3077	Pathogenic	Hemochromatosis type 1	6	G	T	111033558
+15059	57539	Pathogenic	Cranioectodermal dysplasia 2	2	T	C	397515534
+15060	57539	Pathogenic	Cranioectodermal dysplasia 2	2	T	C	267607174

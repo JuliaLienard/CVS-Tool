@@ -1,0 +1,17 @@
+#rsiD	chromosome	position	genotype	UserID
+rs1799945	1	949654	GC	Ne30_genotyping_noUDG
+rs150829393	15	1848225	AA	Ne30_genotyping_noUDG
+rs2494427	1	2338569	TC	Ne30_genotyping_noUDG
+rs12726710	1	3312963	CC	Ne30_genotyping_noUDG
+rs4233019	1	3732172	TT	Ne30_genotyping_noUDG
+rs6702935	1	3732707	CC	Ne30_genotyping_noUDG
+rs9424290	1	3742009	TC	Ne30_genotyping_noUDG
+rs12759497	1	3742257	CC	Ne30_genotyping_noUDG
+rs2275835	1	3742560	AG	Ne30_genotyping_noUDG
+rs6663840	1	3743319	AA	Ne30_genotyping_noUDG
+rs6688969	1	3743391	TC	Ne30_genotyping_noUDG
+rs1799945	1	3746116	AG	Ne30_genotyping_noUDG
+rs1891939	1	3755875	TG	Ne30_genotyping_noUDG
+rs1539649	1	3756120	AA	Ne30_genotyping_noUDG
+rs2275822	1	3761479	CC	Ne30_genotyping_noUDG
+rs10492942	1	3764216	CC	Ne30_genotyping_noUDG

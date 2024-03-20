@@ -1,0 +1,9 @@
+#AlleleID	GeneID	ClinicalSignificance	PhenotypeList	RS#(dbSNP)	Chromosome	ReferenceAlleleVCF	AlternateAlleleVCF
+15043	9640	Uncertain significance	150829393	Galloway-Mowat syndrome 1	15	G	A
+15049	3077	Pathogenic/Pathogenic, low penetrance; other	1799945	Hemochromatosis type 1|not provided|Hereditary hemochromatosis|6 conditions|not specified|Cystic fibrosis|Bronze diabetes|Cardiomyopathy|Abnormality of iron homeostasis|Variegate porphyria	1	C	G
+15056	3077	Pathogenic	28934595	Hemochromatosis type 1	6	A	C
+15057	3077	Pathogenic	111033558	Hemochromatosis type 1	6	G	T
+15071	112817	Pathogenic	2041105506	Primary hyperoxaluria type 3	10	G	T
+15090	63929	Pathogenic	267607179	Nephronophthisis-like nephropathy 1	22	G	T
+15101	611	Likely benign	104894031	Blue color blindness|not provided	7	C	T
+15106	7389	Pathogenic	145195562	Familial porphyria cutanea tarda|not provided	1	G	C

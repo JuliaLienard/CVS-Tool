@@ -1,0 +1,4 @@
+#AlleleID	GeneID	ClinicalSignificance	RS#(dbSNP)	PhenotypeList	Chromosome	ReferenceAlleleVCF	AlternateAlleleVCF
+15045	55572	Pathogenic	267606830	Mitochondrial complex 1 deficiency, nuclear type 19	11	A	G
+15057	3077	Pathogenic	111033558	Hemochromatosis type 1	6	G	T
+15060	57539	Pathogenic	267607174	Cranioectodermal dysplasia 2	2	T	C

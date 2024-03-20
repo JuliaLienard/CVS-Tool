@@ -1,0 +1,4 @@
+#Username	rsID[chromosome]	Clinical_Significance	Disease/Disorder	AlleleID	Nb_alleles_involved
+Ne30_genotyping_noUDG	rs1799945[chr1]	Pathogenic/Pathogenic, low penetrance; other	Hemochromatosis type 1|not provided|Hereditary hemochromatosis|6 conditions|not specified|Cystic fibrosis|Bronze diabetes|Cardiomyopathy|Abnormality of iron homeostasis|Variegate porphyria	15049	1allele(s)
+Ne30_genotyping_noUDG	rs150829393[chr15]	Uncertain significance	Galloway-Mowat syndrome 1	15043	2allele(s)
+Ne30_genotyping_noUDG	rs1799945[chr1]	Pathogenic/Pathogenic, low penetrance; other	Hemochromatosis type 1|not provided|Hereditary hemochromatosis|6 conditions|not specified|Cystic fibrosis|Bronze diabetes|Cardiomyopathy|Abnormality of iron homeostasis|Variegate porphyria	15049	1allele(s)
