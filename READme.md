@@ -32,7 +32,7 @@ PATH=$PATH:path/To/plink/
 
 The updated version of the variant_summary.txt can be used as this file is updated monthly by ClinVar.
 
-#### Use of the FilterClinVarNotprovided.py script to filter:
+#### Use of the FilterClinVar.py script to filter:
 - "Single nucleotide variant" 
 - the more accurate Assembly "GRCh38" 
 - "Pathogenic" for the clinical significance
@@ -40,7 +40,6 @@ The updated version of the variant_summary.txt can be used as this file is updat
 - Disease description indicated only as "not provided" are filtered out
 
 The output contains only certain relevant columns for the subsequent analysis (AlleleID, GeneID, ClinicalSignificance, RS# ID, PhenotypeList, Chromosome, RefAllele, AltAllele).
-
 This will create a lighter version of the ClinVar database that can be checked for the extra information included if needed.
 
 ```sh
@@ -58,7 +57,7 @@ cd ../ClinVar
 mkdir 2_Filtered
 cd 2_Filtered
 # Set soft link to FilterClinVar.py:
-ln -s ~/script/FilterClinVarNoprovided.py
+ln -s ~/script/FilterClinVar.py
 python FilterClinVar.py ../variant_summary.txt
 ```
 outputs are Clinvar_SNPpatho.txt and Clinvar_SNPpatho_IDs.txt (both with 47759 lines without the header line)
@@ -167,15 +166,43 @@ The alleleID has been included because it is used later when comparing disease m
 
 ## Which markers the User's has? and which are shared with Ancient people
 
-Là le All_inOne_UserTest.py marche sauf que je pers des Ancient homozygotes dans mon compte.. apparu avec l'intro de la comparaison des
-AlleleID ! il est 17h04 14 mars
-
-All_inOne_User.py script 
-with inputs:
-- UsersFile => I NEED TO MODIFY THE SCRIPT SUCH THAT DIFFERENT USER'S INPUT WORK!!!!!!!!!!!!!!!!!!! + check that alleleID is the same User/Ancient for the marker
-- Clinvar_SNPpatho.txt
-- Ancient_markers.txt
+```sh
+#in home directory:
+mkdir Testusers
+cd Testusers # Test users' files are in this directory
+AncientMarker=../AADR_v54.1/2_Ancient_filtered/ClinVar_markers/Ancient_markers.txt
+ClinVar=../ClinVar/2_filteredStrict/Clinvar_SNPpatho.txt
+python Diseasemarker.py Test1_DNA.txt $ClinVar $AncientMarker
+```
 Outputs in a sub-directory:
 - Table with disease-associated SNPs for the user
-- Table with disease-associated SNPs for the user shared with Ancient people
+- Table with disease-associated SNPs for the user shared with Ancient people (each marker line starts with ">")
+
+Example stdout information during processing:
+```sh
+CSV file obtained
+Process starts
+1933 genotyped SNPs in the user's file found in the ClinVar database
+Extracting these SNPs from the ClinVar database
+Extracting these SNPs from the user's file
+Extracting SNPs associated with disease according to the ClinVar database
+Comparing with disease markers found among Ancient people
+Done!
+```
+
+Example of output table for disease markers found in the user's genotype:
+```sh
+#rsID[chromosome]	Clinical_Significance	Disease/Disorder	AlleleID	Nb_alleles_involved
+rs5082[chr1]	Pathogenic	Hypercholesterolemia, familial, 1	32975	1allele(s)
+rs3755319[chr2]	Pathogenic	Lucey-Driscoll syndrome	27321	2allele(s)
+rs553668[chr10]	Pathogenic	Lipodystrophy, familial partial, type 8	33200	2allele(s)
+```
+
+Example of output table for the user's markers shared with Ancient people:
+```sh
+#Marker	AlleleID	Disease/disorder	Number_of_Ancient_people_with_similar_marker	Ancient_name_IDs
+>rs5082[chr1]	32975	Hypercholesterolemia, familial, 1	3296 Ancien people	Ne30_genotyping_noUDG,Ne61_genotyping_noUDG,Ne35_genotyping_noUDG,I13833,CAO009013,I13580,I6445,I6441,I1707,I13778,I0231,I1525,I14688,I14690,I14692,I14689,I13838,I13840,I13839,I14622,I14685,I15706,I14687,AltaiNeanderthal.DG,AltaiNeanderthal_snpAD.DG,Aconcagua_noUDG.SG,I0308,I2230,I12941,I12942,I12943,Yaghan890_noUDG.SG,Yaghan894_noUDG.SG,I12376,MA577_noUDG.SG,I12362,I12354,I12363,I12365,I1630,I1659,I1660,I1635,ARM001,ARM002,I13599,I14339,I14341,I14340,I16116,I16191,I16219,I19322,I16707,I19327,I15733,I15734,I15749,I18479,I19331,I19332,I19333,I19334,I19335,I19336,I19338,I19339,I19343,I19344,I19345,I19346,I19348,I19350,I19352,I19353,I20439,I20443,I14051,I14052,I14588,I14601,I14602,I14603,I14606,I14618,I14620,I15748,I15750,I18162,I18167,I18248,I18472,I18478,I18481,I18486,I19323,I19324,I19325,I19326,I19328,I14065,I16376,I14619,I14621
+```
+
+
 
