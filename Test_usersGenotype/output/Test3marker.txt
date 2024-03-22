@@ -1,0 +1,8 @@
+#rsID[chromosome]	Clinical_Significance	Disease/Disorder	AlleleID	Nb_alleles_involved
+rs5082[chr1]	Pathogenic	Hypercholesterolemia, familial, 1	32975	1allele(s)
+rs3755319[chr2]	Pathogenic	Lucey-Driscoll syndrome	27321	2allele(s)
+rs9289231[chr3]	Pathogenic	Coronary heart disease, susceptibility to, 5	20497	1allele(s)
+rs397518480[chrX]	Pathogenic	X-linked parkinsonism-spasticity syndrome	94337	2allele(s)
+rs397514679[chrX]	Pathogenic	Epilepsy, X-linked 1, with variable learning disabilities and behavior disorders|SYN1-related condition	50325	1allele(s)
+rs1054894[chrX]	Pathogenic	Deafness dystonia syndrome	26363	2allele(s)
+rs1060500747[chrX]	Pathogenic	Fabry disease|not provided	404465	1allele(s)

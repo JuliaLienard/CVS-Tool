@@ -1,0 +1,7 @@
+#rsID[chromosome]	Clinical_Significance	Disease/Disorder	AlleleID	Nb_alleles_involved
+rs121434375[chr1]	Pathogenic	Hemochromatosis type 2A|not provided	17412	2allele(s)
+rs2815822[chr6]	Pathogenic	Factor XIII, A subunit, deficiency of	38650	1allele(s)
+rs1805076[chr11]	Pathogenic	Lung carcinoma	21660	1allele(s)
+rs104894490[chr15]	Pathogenic	Hereditary spastic paraplegia 6	17560	2allele(s)
+rs104894496[chr15]	Pathogenic	Hereditary spastic paraplegia 6	17559	2allele(s)
+rs730881495[chr17]	Pathogenic	Breast-ovarian cancer, familial, susceptibility to, 1	131280	2allele(s)

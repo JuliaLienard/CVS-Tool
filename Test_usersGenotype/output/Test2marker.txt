@@ -1,0 +1,3 @@
+#rsID[chromosome]	Clinical_Significance	Disease/Disorder	AlleleID	Nb_alleles_involved
+rs3755319[chr2]	Pathogenic	Lucey-Driscoll syndrome	27321	2allele(s)
+rs553668[chr10]	Pathogenic	Lipodystrophy, familial partial, type 8	33200	2allele(s)

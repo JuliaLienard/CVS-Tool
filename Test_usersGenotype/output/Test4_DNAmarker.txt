@@ -1,0 +1,8 @@
+#rsID[chromosome]	Clinical_Significance	Disease/Disorder	AlleleID	Nb_alleles_involved
+rs5082[chr1]	Pathogenic	Hypercholesterolemia, familial, 1	32975	2allele(s)
+rs730880028[chr2]	Pathogenic	Amyotrophic lateral sclerosis 22 with frontotemporal dementia	178368	2allele(s)
+rs3755319[chr2]	Pathogenic	Lucey-Driscoll syndrome	27321	1allele(s)
+rs9289231[chr3]	Pathogenic	Coronary heart disease, susceptibility to, 5	20497	1allele(s)
+rs267606858[chr3]	Pathogenic	Glycogen storage disease XV	20993	1allele(s)
+rs553668[chr10]	Pathogenic	Lipodystrophy, familial partial, type 8	33200	2allele(s)
+rs730881495[chr17]	Pathogenic	Breast-ovarian cancer, familial, susceptibility to, 1	131280	2allele(s)
