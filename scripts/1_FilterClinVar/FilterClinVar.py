@@ -16,26 +16,25 @@ AlleleID\tGeneID\tClinicalSignificance\tRS#(dbSNP)\tPhenotypeList\tChromosome\tR
 Usage: FilterClinVar.py variant_summary.txt
 
 '''
-# 1. Import required modules
+
 import sys
 import os
 
-# 2. check correct number of arguments provided according to usage
+# check correct number of arguments provided according to usage
 if len(sys.argv) != 2:
     print("Wrong number of arguments provided!\nUsage: python FilterCommonIDs.py file.map ClinVarfileToFilter.txt")
     quit()
+
 inputClinVar = sys.argv[1]
 
 # check if output files do not exist already
 if os.path.isfile("Clinvar_SNPpatho.txt"):
         print("The output Clinvar_SNPpatho.txt already exists. Remove or Rename existing output file")
         quit()
-if os.path.isfile("Clinvar_SNPpatho_IDs.txt"):
-        print("The output Clinvar_SNPpatho_IDs.txt already exists. Remove or Rename existing output file")
-        quit()
+
 
 with open(inputClinVar, "r") as inputfile, \
-open("Clinvar_SNPpatho.txt", "w")as output, open("Clinvar_SNPpatho_IDs.txt", "w") as IDs:
+open("Clinvar_SNPpatho.txt", "w")as output:
 	output.write(f'#AlleleID\tGeneID\tClinicalSignificance\tRS#(dbSNP)\tPhenotypeList\tChromosome\tReferenceAlleleVCF\tAlternateAlleleVCF\n')
 	header = inputfile.readline()
 	if header.startswith("#"):
@@ -61,4 +60,3 @@ open("Clinvar_SNPpatho.txt", "w")as output, open("Clinvar_SNPpatho_IDs.txt", "w"
 			AltAllele = infoline[33]
 			if TypeVariant == "single nucleotide variant" and Assembly == "GRCh38" and ClinicalSignificance == "Pathogenic" and RS != "-1" and PhenotypeList != "not provided":
 				output.write(f'{AlleleID}\t{GeneID}\t{ClinicalSignificance}\t{RS}\t{PhenotypeList}\t{Chromosome}\t{RefAllele}\t{AltAllele}\n')
-				IDs.write(f'{RS}\n')

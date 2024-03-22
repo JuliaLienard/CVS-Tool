@@ -58,7 +58,7 @@ mkdir 2_Filtered
 cd 2_Filtered
 # Set soft link to FilterClinVar.py:
 ln -s ~/script/FilterClinVar.py
-python FilterClinVar.py ../variant_summary.txt
+python FilterClinVar.py ../1_rawdata/variant_summary.txt
 ```
 outputs are Clinvar_SNPpatho.txt and Clinvar_SNPpatho_IDs.txt (both with 47759 lines without the header line)
 
@@ -103,15 +103,12 @@ Only Ancient people are kept in the generated Ancient.ped and Ancient.map files,
 ####  1) Filter "Clinvar_SNPpatho.txt"
 
 ```sh
-ClinVarpatho=~/ClinVar_search/ClinVar/2_filteredStrict/Clinvar_SNPpatho.txt 
-
-```sh
 # in home directory of the project:
 cd ~/AADR_v54.1/2_Ancient_filtered
 mkdir ClinVar_filtered
 cd ClinVar_filtered
-AncientMap=../Ancient.map
-ClinVarpatho=../../../ClinVar/2_filteredStrict/Clinvar_SNPpatho.txt 
+AncientMap=../1_rawdata/Ancient.map
+ClinVarpatho=~/ClinVar/2_filteredStrict/Clinvar_SNPpatho.txt 
 python FilterCommonIDs.py $AncientMap $ClinVarpatho
 ```
 output are the filtered ClinVar_SNPpathoAncientfiltered.txt and AncientSNP_to_extract.txt # 45 SNP IDs in common
@@ -148,7 +145,7 @@ ln -s ../../script/Ancient_ClinVarmarker.py
 python Ancient_ClinVarmarker.py ClinVar_filtered/Ancient_ClinVfiltered_Genotype.txt ClinVar_filtered/ClinVar_SNPpathoAncientfiltered.txt
 ```
 Ancient_markers.txt is output in the newly generated ClinVar_markers/ directory in /AADR_v54.1/2_Ancient_filtered/
-7548 disease markers identified in Ancient people using the ClinVar database version
+7547 disease markers identified in Ancient people using the ClinVar database version February 2024
 
 The output table looks like the following (first 5 lines):
 ```sh
@@ -159,7 +156,7 @@ Ne61_genotyping_noUDG	rs5082[chr1]	Pathogenic	Hypercholesterolemia, familial, 1	
 Ne35_genotyping_noUDG	rs5082[chr1]	Pathogenic	Hypercholesterolemia, familial, 1	32975	2allele(s)
 ```
 
-The alleleID has been included because it is used later when comparing disease markers for any user with those found in Ancient people. Indeed, some disease markers can have the same rsID with different alleles (and thus different alleleIDs) and different associated Disease/disorder description. If the ClinVar database if filtered in the future by including also "likely pathogenic" for instance, CVS-Tool will still be able to accurately give shared markers between a user and Ancient people.
+The alleleID has been included because it is used later when comparing disease markers for any user with those found in Ancient people. Indeed, some disease markers can have the same rsID with different alleles (and thus different alleleIDs) and different associated Disease/disorder description. If the ClinVar database is filtered in the future by including also "likely pathogenic" for instance, CVS-Tool will still be able to accurately give shared markers between a user and Ancient people.
 
 -------------------------------------------------------------------------------------------------------------------------------------------
 ## DISEASE MARKERS FOR ANY USER
