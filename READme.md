@@ -23,9 +23,9 @@ If the necessary paths to plink does not exist, set it up following this example
 ```sh
 PATH=$PATH:path/To/plink/
 ```
-
-# DISEASE MARKERS AMONG ANCIENT PEOPLE
-
+-------------------------------------------------------------------------------------------------------------------------------------------
+## DISEASE MARKERS AMONG ANCIENT PEOPLE
+-------------------------------------------------------------------------------------------------------------------------------------------
 ## STEP 1 - Extracting the data subsets for the analysis
 
 ### A- Extract relevant lines of ClinVar for the subsequent analysis, from the variant_summary.txt 
@@ -161,9 +161,9 @@ Ne35_genotyping_noUDG	rs5082[chr1]	Pathogenic	Hypercholesterolemia, familial, 1	
 
 The alleleID has been included because it is used later when comparing disease markers for any user with those found in Ancient people. Indeed, some disease markers can have the same rsID with different alleles (and thus different alleleIDs) and different associated Disease/disorder description. If the ClinVar database if filtered in the future by including also "likely pathogenic" for instance, CVS-Tool will still be able to accurately give shared markers between a user and Ancient people.
 
-
-# DISEASE MARKERS FOR ANY USER
-
+-------------------------------------------------------------------------------------------------------------------------------------------
+## DISEASE MARKERS FOR ANY USER
+-------------------------------------------------------------------------------------------------------------------------------------------
 ## Which markers the User's has? and which are shared with Ancient people
 
 ```sh
