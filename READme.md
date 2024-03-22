@@ -125,13 +125,13 @@ Output files are Ancient_ClinVfilteredStrict.map and Ancient_ClinVfilteredStrict
 Total genotyping rate is 0.552615
 
 
-#### 3) Extract Genotype, SNP ID, position, chromosome and user ID from .ped and .map files for the Ancient peple.
+#### 3) Extract Genotype, SNP ID, position, chromosome and Genetic ID from .ped and .map files for the Ancient peple.
 
 ```sh
 # From plink format files to a genotype file for Ancient_ClinVfilteredStrict
 # in ~/AADR_v54.1/2_Ancient_filtered/ClinVar_filtered:
 # creating soft link for PlinkFormat2GenotypeFiltered.py in the working directory:
-ln -s ~/script/PlinkFormat2Genotype.py
+ln -s ~/script/PlinkFormat2GenotypeFiltered.py
 python PlinkFormat2GenotypeFiltered.py Ancient_ClinVfilteredStrict.map Ancient_ClinVfilteredStrict.ped Ancient_ClinVfilteredStrict_Genotype.txt
 # output file is Ancient_ClinVfiltered_Genotype.txt
 cat Ancient_ClinVfilteredStrict_Genotype.txt | wc -l # here we get 250228 lines including header
@@ -149,7 +149,7 @@ Ancient_markers.txt is output in the newly generated ClinVar_markers/ directory 
 
 The output table looks like the following (first 5 lines):
 ```sh
-#Username	rsID[chromosome]	Clinical_Significance	Disease/Disorder	AlleleID	Nb_alleles_involved
+#ancientGeneticID	rsID[chromosome]	Clinical_Significance	Disease/Disorder	AlleleID	Nb_alleles_involved
 Ne30_genotyping_noUDG	rs5082[chr1]	Pathogenic	Hypercholesterolemia, familial, 1	32975	2allele(s)
 Ne30_genotyping_noUDG	rs3755319[chr2]	Pathogenic	Lucey-Driscoll syndrome	27321	1allele(s)
 Ne61_genotyping_noUDG	rs5082[chr1]	Pathogenic	Hypercholesterolemia, familial, 1	32975	2allele(s)

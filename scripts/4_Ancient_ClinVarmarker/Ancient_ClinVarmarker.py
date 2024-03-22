@@ -7,13 +7,13 @@ Date : 2024-03-08
 Description: the program takes the genotype file generated with PlinkFormat2GenotypeFiltered.py and 
 compares for each SNP ID the user has, the alternative allele referenced in the pre-filtered ClinVar db, 
 associated with a pathogenic phenotypes. If that is the case, the program outputs a tab-delimited table with header:
-#Username rsID[chromosome] Clinical_Significance Disease/Disorder AlleleID Nb_alleles_involved
+#GeneticID rsID[chromosome] Clinical_Significance Disease/Disorder AlleleID Nb_alleles_involved
 and corresponding information.
 
 Usage: python Ancient_ClinVarmarker.py genotype.txt ClinvarSNP_patho.txt
 
 '''
-# Import required modules
+
 import sys
 import os
 
@@ -22,7 +22,7 @@ if len(sys.argv) != 3:
     print("Wrong number of arguments provided!\nUsage: python Ancient_ClinVarmarker.py genotype.txt ClinvarSNP_patho.txt")
     quit()
 
-UsersFile = sys.argv[1]
+GenotypeFile = sys.argv[1]
 ClinVardb = sys.argv[2]
 
 
@@ -35,9 +35,9 @@ if os.path.isfile("./ClinVar_markers/Ancient_markers.txt"):
 	print("The output file called Ancient_markers.txt already exists. Remove or rename existing output file")
 	quit()
 
-with open(UsersFile) as UsersGenotype, open("./ClinVar_markers/Ancient_markers.txt", "w") as marker:
-	marker.write(f'#Username\trsID[chromosome]\tClinical_Significance\tDisease/Disorder\tAlleleID\tNb_alleles_involved\n')
-	for line in UsersGenotype:
+with open(GenotypeFile) as Genotype, open("./ClinVar_markers/Ancient_markers.txt", "w") as marker:
+	marker.write(f'#ancientGeneticID\trsID[chromosome]\tClinical_Significance\tDisease/Disorder\tAlleleID\tNb_alleles_involved\n')
+	for line in Genotype:
 		if not line.startswith("#"):
 			infoline = line.strip().split("\t")
 			if len(infoline) != 5:
@@ -49,7 +49,7 @@ with open(UsersFile) as UsersGenotype, open("./ClinVar_markers/Ancient_markers.t
 			chromosomeUser = infoline[1]
 			position = infoline[2]
 			genotype = infoline[3]
-			username = infoline[4]
+			GeneticID = infoline[4]
 			allele1 = genotype[0:1]
 			allele2 = genotype[1:]
 			AlleleNb = 0
@@ -76,10 +76,10 @@ with open(UsersFile) as UsersGenotype, open("./ClinVar_markers/Ancient_markers.t
 							if allele2 == AltAllele:
 								AlleleNb += 1
 							if AlleleNb == 1:
-								marker.write(f'{username}\trs{ID}[chr{chromosomeUser}]\t{ClinSig}\t{Disease}\t{AlleleID}\t{AlleleNb}allele(s)\n')
+								marker.write(f'{GeneticID}\trs{ID}[chr{chromosomeUser}]\t{ClinSig}\t{Disease}\t{AlleleID}\t{AlleleNb}allele(s)\n')
 								AlleleNb = 0
 							if AlleleNb == 2:
-								marker.write(f'{username}\trs{ID}[chr{chromosomeUser}]\t{ClinSig}\t{Disease}\t{AlleleID}\t{AlleleNb}allele(s)\n')
+								marker.write(f'{GeneticID}\trs{ID}[chr{chromosomeUser}]\t{ClinSig}\t{Disease}\t{AlleleID}\t{AlleleNb}allele(s)\n')
 								AlleleNb = 0
 						
 

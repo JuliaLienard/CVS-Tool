@@ -23,21 +23,21 @@ are output.
 Usage PlinkFormat2genotypeFiltered.py file.map file.ped outputfile
 
 '''
-# 1. Import required modules
+
 import sys
 import os
 
-# 2. check correct number of arguments provided according to usage
+# 1. check correct number of arguments provided according to usage
 if len(sys.argv) != 4:
     print("Wrong number of arguments provided!\nUsage PlinkFormat2genotypeFiltered.py file.map file.ped outputfile")
     quit()
 
-# 3. attribute arguments
+# 2. attribute arguments
 MapFile = sys.argv[1]
 PedFile = sys.argv[2]
 OutputFile = sys.argv[3]
 
-# 4. check if output files do not exist already
+# 3. check if output files do not exist already
 if os.path.isfile(OutputFile):
         print("The output genotype file already exists. Remove or Rename existing output file")
         quit()
@@ -65,7 +65,7 @@ with open(MapFile, "r") as MAP:
 
 with open(PedFile, "r") as PED, \
 open(OutputFile, "w") as output:
-	output.write(f'#rsiD\tchromosome\tposition\tgenotype\tUserID\n')
+	output.write(f'#rsiD\tchromosome\tposition\tgenotype\tancientGeneticID\n')
 	PositionOnLine = 6 #corresponds to first nucleotide of genotype data
 	LastNucleotide = ""
 	nucleotides = ["0", "A", "C", "G", "T" ]
@@ -74,11 +74,12 @@ open(OutputFile, "w") as output:
 		UserID = infoline[1].strip()
 		PositionOnLine = 6
 		LastNucleotide = int(len(infoline)) -1
-		index = 0 # index of the lists generated from the .map file (index=0 is 1st line on .map)
+		index = 0 # index of the lists generated from the .map file (index=0 is 1st line on .map which is the first rs ID)
 		while PositionOnLine < int(LastNucleotide): 
 			genotypeAllele1 = infoline[PositionOnLine].strip() 
-			allele1 = nucleotides[int(genotypeAllele1)]
-			PositionOnLine += 1
+			allele1 = nucleotides[int(genotypeAllele1)] # the value in the ped file is used as the index for the nucleotides list
+			# ex: if the value 0 is found in .ped, no nucleotide data provided, index 0 in nucleotide list is 0. Value 1 gives A.
+			PositionOnLine += 1 # the line is parsed character per character
 			genotypeAllele2 = infoline[PositionOnLine].strip()
 			allele2 = nucleotides[int(genotypeAllele2)]
 			Genotype = allele1 + allele2
@@ -87,5 +88,5 @@ open(OutputFile, "w") as output:
 				output.write(f'{List_SNP[index]}\t{List_chromosome[index]}\t{List_position[index]}\t{Genotype}\t{UserID}\n')
 				index += 1
 			else:
-				index += 1
+				index += 1 # if Genotype == 00, we do not write but continue to next rs ID. 
 			
