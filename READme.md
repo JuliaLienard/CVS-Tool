@@ -1,8 +1,6 @@
 # READme
 
-In the context of an exercise for the course DNA sequences analyses of the Master program Bioinformatics at Lund University, this project was developped.
-
-The overall aim was to identify disease markers among Ancient people's available genomic data, using the database ClinVar. Then, identify disease markers for any given user's genotype file and see if any of the identified markers were shared with Ancient people.
+CVS-Tool was developped to be able to identify disease markers among Ancient people's available genomic data, using the database ClinVar. Then, identify disease markers for any given user's genotype file and see if any of the identified markers were shared with Ancient people.
 
 Available datasets are:
 - variant_summary.txt.gz file (version February 2024) from ClinVar https://ftp.ncbi.nlm.nih.gov/pub/clinvar/tab_delimited/
